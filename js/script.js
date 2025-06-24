@@ -1,5 +1,5 @@
 document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault(); // Formu otomatik olarak göndermesin
+  e.preventDefault();
 
   const form = e.target;
   const formData = new FormData(form);
@@ -7,16 +7,24 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   fetch(form.action, {
     method: form.method,
     body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
+    headers: { 'Accept': 'application/json' }
   }).then(response => {
     if (response.ok) {
       form.style.display = "none";
-      document.getElementById("thank-you").style.display = "block";
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 10000); // 10 saniye sonra yönlendirme
+      const thankYou = document.getElementById("thank-you");
+      thankYou.style.display = "block";
+
+      // Countdown
+      let seconds = 10;
+      const countdownElement = document.getElementById("countdown");
+      const interval = setInterval(() => {
+        seconds--;
+        countdownElement.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(interval);
+          window.location.href = "index.html";
+        }
+      }, 1000);
     } else {
       alert("Oops! There was a problem submitting your form.");
     }

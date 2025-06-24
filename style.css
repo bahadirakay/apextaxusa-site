@@ -1,0 +1,28 @@
+#thank-you {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #e6ffed;
+  border: 2px solid #7dd87d;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f6627;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#thank-you h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#thank-you p {
+  font-size: 1rem;
+}
+
+/* Optional: smooth fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

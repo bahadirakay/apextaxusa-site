@@ -1,1 +1,156 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
 
+h1, h2 {
+  color: #1a2a40;
+}
+
+a {
+  color: #0078d7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background: url('../images/hero-banner.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1,
+.hero p,
+.hero .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  color: #0078d7;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Sections */
+section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Services List */
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+/* CTA Footer */
+.cta-footer {
+  background-color: #f1f4f9;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #eaeaea;
+  font-size: 0.9rem;
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccd0d5;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #0078d7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* Thank You Message */
+#thank-you {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #e6ffed;
+  border: 2px solid #7dd87d;
+  border-radius: 8px;
+  text-align: center;
+  color: #2f6627;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

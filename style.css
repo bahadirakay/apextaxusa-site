@@ -115,3 +115,27 @@ footer {
   background-color: #eaeaea;
   font-size: 0.9rem;
 }
+
+body {
+  background-color: lightyellow;
+}
+
+.hero {
+  background: url('images/hero-banner.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* karartma efekti */
+}
+.hero h1,
+.hero p,
+.hero .cta-button {
+  position: relative;
+  z-index: 1;
+}

@@ -6,6 +6,19 @@ body {
   line-height: 1.6;
 }
 
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 10px;
+  }
+
+  .services li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
 h1, h2 {
   color: #1a2a40;
 }

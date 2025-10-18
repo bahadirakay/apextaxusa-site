@@ -22,10 +22,13 @@
     </div>
   </header>
 
-  <!-- Contact Section -->
-<h2>Book Your Consultation</h2>
-<p>Tell us what you need help with (returns, planning, or entity setup). We’ll reply with times and next steps—fast and clear.</p>
- 
+<!-- Contact Section -->
+<section class="contact-section">
+  <h2>Book Your Consultation</h2>
+  <p class="lead">
+    Tell us what you need help with (returns, planning, or entity setup). We’ll reply with times and next steps—fast and clear.
+  </p> 
+	
 	<!-- Google Form Embed (replaces the previous <form> block) -->
   <div class="gform-embed">
     <iframe
@@ -55,20 +58,41 @@
 
   /* Slightly shorter on small screens */
   @media (max-width: 480px) {
-    .gform-embed iframe { height: 1600px; }
+    .gform-embed iframe { height: 800px; }
   }
 </style>
-	
-    <div class="contact-details">
-      <h3>Or reach us directly:</h3>
-      <p>
-        <strong>Email:</strong> <a href="mailto:bahadir.apextaxusa@gmail.com">bahadir.apextaxusa@gmail.com</a><br>
-		<strong>Email:</strong> <a href="mailto:isaac.apextaxusa@gmail.com">isaac.apextaxusa@gmail.com</a><br>
-        <strong>Phone:</strong> <a href="tel:+1(973) 519-4539">+1(973) 519-4539</a><br>
-        <strong>WhatsApp:</strong> <a href="https://wa.me/19739817525" target="_blank">+1 (973) 981-7525</a>
-      </p>
+
+  <!-- Direct Contact Card -->
+  <div class="contact-details" role="complementary" aria-label="Direct contact options">
+    <h3>Or reach us directly:</h3>
+
+    <ul class="contact-list">
+      <li>
+        <!-- mail icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v.3l-10 6.25L2 8.3V8a2 2 0 0 1 2-2Zm0 4.2 8 5 8-5V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5.8Z"/></svg>
+        <strong>Email:</strong> <a href="mailto:bahadir.apextaxusa@gmail.com">bahadir.apextaxusa@gmail.com</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v.3l-10 6.25L2 8.3V8a2 2 0 0 1 2-2Zm0 4.2 8 5 8-5V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5.8Z"/></svg>
+        <strong>Email:</strong> <a href="mailto:isaac.apextaxusa@gmail.com">isaac.apextaxusa@gmail.com</a>
+      </li>
+      <li>
+        <!-- phone icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1.5 1.5 0 0 1 1.5-.37c1.63.49 3.39.76 5.2.76a1 1 0 0 1 1 1v3.17a1 1 0 0 1-1 1A19.1 19.1 0 0 1 2 5a1 1 0 0 1 1-1H6.2a1 1 0 0 1 1 1c0 1.81.27 3.57.76 5.2a1.5 1.5 0 0 1-.37 1.5l-1 1Z"/></svg>
+        <strong>Phone:</strong> <a href="tel:+19735194539">+1 (973) 519-4539</a>
+      </li>
+      <li>
+        <!-- WhatsApp icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.7A10 10 0 0 0 2 13.3L1 22l8.9-1a10 10 0 0 0 10-17.3ZM9.9 18.7l-4.8.6.6-4.8a8 8 0 1 1 4.2 4.2Zm6-4.6c-.3-.2-1.6-.8-1.8-.8s-.4-.1-.7.2c-.2.3-.7.8-.8.9s-.3.2-.6 0-1.2-.4-2.2-1.4-1.4-1.9-1.5-2.2 0-.5.2-.6l.4-.4c.2-.2.2-.3.3-.5 0-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.7-.6-.6-.8-.6h-.6c-.2 0-.6.1-1 .5s-1.3 1.3-1.3 3.1 1.3 3.6 1.5 3.8c.2.3 2.6 4 6.3 5.4 3.7 1.4 3.7.9 4.4.9s2.2-1 2.5-1.9c.3-.9.3-1.7.2-1.9 0-.3-.2-.4-.5-.6Z"/></svg>
+        <strong>WhatsApp:</strong> <a href="https://wa.me/19739817525" target="_blank" rel="noopener">+1 (973) 981-7525</a>
+      </li>
+    </ul>
+
+    <div class="micro-note">
+      Your info stays private and isn’t shared with third parties, except as required by U.S. law.
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>

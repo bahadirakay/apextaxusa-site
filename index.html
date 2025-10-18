@@ -76,18 +76,117 @@
     <a href="contact.html" class="cta-button">See All Services</a>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
+ <!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="t-head">
     <h2>What Our Clients Say</h2>
-    <blockquote>
-      "Apex made my tax season stress-free and saved me money!"
-      <span>— Satisfied Client</span>
+    <div class="t-controls">
+      <button class="t-btn prev" aria-label="Previous">‹</button>
+      <button class="t-btn next" aria-label="Next">›</button>
+    </div>
+  </div>
+
+  <!-- Scrollable row: shows 3 cards; scrolls sideways for the rest -->
+  <div class="t-track" id="t-track">
+    <blockquote class="t-card">
+      <p>“They untangled my NJ/NY multi-state return, found a credit I missed, and turned a balance due into a $1,250 refund.”</p>
+      <span>— Daniel K., Software Engineer (Hoboken, NJ)</span>
     </blockquote>
-    <blockquote>
-      "Professional, responsive, and knowledgeable. Highly recommended."
-      <span>— Business Owner</span>
+
+    <blockquote class="t-card">
+      <p>“Apex set up my LLC → S-Corp, handled payroll and quarterly estimates, and explained every step. No surprises—just clean execution.”</p>
+      <span>— Maria L., Owner, Luna Floral Co. (Brooklyn, NY)</span>
     </blockquote>
-  </section>
+
+    <blockquote class="t-card">
+      <p>“Rental property + W-2 + several 1099s in one organized return. The secure portal made uploads simple, and responses were same-day.”</p>
+      <span>— N.P., Consultant with AZ rental (remote)</span>
+    </blockquote>
+
+    <blockquote class="t-card">
+      <p>“They resolved an IRS CP2000 notice in a week and cut proposed penalties by ~$900. I finally slept.”</p>
+      <span>— Ahmed T. (Clifton, NJ)</span>
+    </blockquote>
+
+    <blockquote class="t-card">
+      <p>“Switched from another firm. Bookkeeping, sales-tax filings, and month-end reports now arrive on time—every time.”</p>
+      <span>— Angela R., E-commerce Seller (Jersey City, NJ)</span>
+    </blockquote>
+
+    <blockquote class="t-card">
+      <p>“Our annual tax-planning session paid for itself. We fixed withholding, set estimates, and avoided an underpayment penalty.”</p>
+      <span>— K.M., Small Business Owner (Paramus, NJ)</span>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .testimonials { --gap: 1rem; --card-w: calc((100% - var(--gap)*2) / 3); }
+  .testimonials { padding: 1rem 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .t-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
+  .t-head h2 { margin: 0; font-size: 1.4rem; }
+
+  /* Controls */
+  .t-controls { display: flex; gap: .5rem; }
+  .t-btn { border: 1px solid #e3e3e3; background: #fff; border-radius: .5rem; width: 2.25rem; height: 2.25rem; font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .t-btn:hover { background: #f6f6f6; }
+
+  /* Horizontal track */
+  .t-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: var(--card-w); /* 3 per view on desktop */
+    gap: var(--gap);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding: .25rem;
+    padding-bottom: .25rem;
+  }
+  .t-track::-webkit-scrollbar { height: .6rem; }
+  .t-track::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 999px; }
+
+  /* Cards */
+  .t-card {
+    scroll-snap-align: start;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid #e8e8e8;
+    border-radius: .75rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  }
+  .t-card p { margin: 0 0 .75rem; font-size: .98rem; line-height: 1.5; }
+  .t-card span { color: #60666d; font-size: .9rem; }
+
+  /* Responsive: 2 per view on tablets, 1 per view on phones */
+  @media (max-width: 992px) {
+    .testimonials { --card-w: calc((100% - var(--gap)) / 2); }
+  }
+  @media (max-width: 600px) {
+    .testimonials { --card-w: 100%; }
+    .t-head { align-items: flex-start; }
+  }
+</style>
+
+<script>
+  (function () {
+    const track = document.getElementById('t-track');
+    const next = document.querySelector('.t-btn.next');
+    const prev = document.querySelector('.t-btn.prev');
+
+    function cardWidth() {
+      // width of one “page” = width of the visible area (≈3 cards on desktop)
+      return track.clientWidth;
+    }
+    next.addEventListener('click', () =>
+      track.scrollBy({ left: cardWidth(), behavior: 'smooth' })
+    );
+    prev.addEventListener('click', () =>
+      track.scrollBy({ left: -cardWidth(), behavior: 'smooth' })
+    );
+  })();
+</script>
 
   <!-- CTA Footer -->
   <section class="cta-footer">

@@ -335,7 +335,7 @@ footer {
 .contact-ico {
   display: block;
   width: 24px; height: 24px;
-   color: #e2b76a;
+  align-items: center;
 }
 
 

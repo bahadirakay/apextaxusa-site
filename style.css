@@ -332,8 +332,8 @@ footer {
 }
 
 .contact-list svg {
-  width: 8px;
-  height: 8px;
+  width: 32px;
+  height: 32px;
   fill: var(--accent);
   margin-top: 1px;
   flex: none;

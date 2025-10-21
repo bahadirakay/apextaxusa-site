@@ -308,19 +308,20 @@ footer {
 }
 
 /* List */
+/* img ile kullanılan ikonlar için basit hizalama */
 .contact-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 .75rem;
+  margin: 0;
   display: grid;
   gap: .6rem;
 }
 
 .contact-list li {
   display: grid;
-  grid-template-columns: 22px 1fr;
+  grid-template-columns: 24px auto;
   gap: .6rem .75rem;
-  align-items: start;
+  align-items: center;
   padding: .6rem .65rem;
   border-radius: 12px;
   transition: background .2s ease, transform .15s ease;
@@ -331,13 +332,12 @@ footer {
   transform: translateY(-1px);
 }
 
-.contact-list svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--accent);
-  margin-top: 1px;
-  flex: none;
+.contact-ico {
+  display: block;
+  width: 24px; height: 24px;
+  color:#D4AF37;
 }
+
 
 .contact-list strong {
   color: var(--ink);

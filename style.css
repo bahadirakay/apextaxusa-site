@@ -319,7 +319,7 @@ footer {
 
 .contact-list li {
   display: grid;
-  grid-template-columns: 24px auto;
+  grid-template-columns: auto auto;
   gap: .6rem .75rem;
   align-items: center;
   padding: .6rem .65rem;

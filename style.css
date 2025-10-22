@@ -278,87 +278,94 @@ footer {
   max-width: 62ch;
 }
 
-/* Card */
-.contact-details {
-  position: relative;
-  border: 1px solid rgba(27,42,82,.12);
-  background: radial-gradient(120% 120% at 10% 0%, rgba(212,175,55,.06) 0%, rgba(27,42,82,.03) 38%, transparent 70%), var(--card);
-  border-radius: 16px;
-  padding: 1rem 1rem 1.1rem;
-  box-shadow: 0 6px 18px rgba(27,42,82,.08);
-  overflow: hidden;
+/* ===== Direct Contact Card (scoped, clean) ===== */
+.contact-details{
+  --brand:#1B2A52;      /* parliament blue */
+  --accent:#E2B76A;     /* gold */
+  --surface:#11273B;    /* card bg */
+  --border:#1a3550;
+  --ink:#F5F5F5;
+  --muted:#C7D2E0;
+
+  background: linear-gradient(180deg, rgba(226,183,106,.06), rgba(226,183,106,0)) , var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px 18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  color:var(--ink);
 }
 
-.contact-details::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, rgba(212,175,55,.25), rgba(27,42,82,.0) 45%),
-    linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
-  mix-blend-mode: overlay;
+.contact-title{            /* <h3 class="contact-title"> ... */
+  margin:0 0 12px;
+  font-size:1.1rem;
+  color:var(--ink);
+  letter-spacing:.2px;
 }
 
-.contact-details h3 {
-  margin: 0 0 .75rem;
-  font-size: 1.1rem;
-  color: var(--ink);
+/* Grid: auto-fit ile 2 sütun (dar ekranda 1) */
+.contact-list{
+  list-style:none;
+  margin:0; padding:0;
+  display:grid;
+  gap:12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* List */
-/* img ile kullanılan ikonlar için basit hizalama */
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: .6rem;
+.contact-item{            /* <li class="contact-item"> yapısına göre */
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:.6rem .8rem;
+  align-items:start;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:.85rem .9rem;
+  transition:transform .15s ease, box-shadow .15s ease, background .2s ease, border-color .2s ease;
+}
+.contact-item:hover{
+  transform:translateY(-1px);
+  background:rgba(226,183,106,.06);
+  border-color:rgba(226,183,106,.35);
+  box-shadow:0 8px 20px rgba(0,0,0,.16);
 }
 
-.contact-list li {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: .6rem .75rem;
-  align-items: center;
-  padding: .6rem .65rem;
-  border-radius: 12px;
-  transition: background .2s ease, transform .15s ease;
+.contact-ico{
+  width:24px; height:24px;
+  display:block; margin-top:2px;
+  /* img ile harici SVG kullanıyorsan renk dışarıdan değişmez.
+     Gold/beyaz dosyalarla tutarlılık sağla veya inline SVG'ye geç. */
 }
 
-.contact-list li:hover {
-  background: rgba(27,42,82,.035);
-  transform: translateY(-1px);
+.contact-body .contact-label{
+  display:block;
+  font-size:.82rem;
+  color:var(--muted);
+  margin-bottom:.1rem;
+  letter-spacing:.02em;
 }
 
-.contact-ico {
-  display: block;
-  width: 24px; height: 24px;
-  align-items: center;
+.contact-body .contact-value{
+  color:var(--accent);
+  font-weight:600;
+  text-decoration:none;
+  word-break:break-word;
+  text-underline-offset:2px;
+}
+.contact-body .contact-value:hover{ color:#fff; text-decoration:underline; }
+
+.contact-note{
+  margin:.6rem 0 0;
+  font-size:.85rem;
+  color:#b9c6d4;
+  border-top:1px dashed rgba(255,255,255,.18);
+  padding-top:.55rem;
 }
 
-
-.contact-list strong {
-  color: var(--ink);
-  margin-right: .35rem;
+@media (max-width:520px){
+  .contact-details{ padding:16px 14px; border-radius:14px; }
+  .contact-item{ padding:.75rem .8rem; }
 }
 
-.contact-list a {
-  color: var(--brand);
-  text-underline-offset: 2px;
-  transition: color .15s ease, text-decoration-color .15s ease;
-}
-.contact-list a:hover { text-decoration: underline; }
-
-/* Micro note */
-.micro-note {
-  margin-top: .25rem;
-  font-size: .85rem;
-  color: var(--muted);
-  border-top: 1px dashed rgba(27,42,82,.15);
-  padding-top: .5rem;
-}
 
 /* Responsive */
 @media (min-width: 768px) {

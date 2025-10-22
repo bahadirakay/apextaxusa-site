@@ -228,13 +228,13 @@ footer {
 .contact-section h2 {
   font-size: clamp(1.6rem, 2.2vw, 2rem);
   margin: 0 0 .25rem;
-  color: var(--brand);
+  /*color: var(--brand);*/
   letter-spacing: 0.3px;
 }
 
 .contact-section .lead {
   margin: 0 0 1rem;
-  color: var(--muted);
+  /*color: var(--muted);*/
   max-width: 62ch;
 }
 

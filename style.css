@@ -335,9 +335,7 @@ footer {
   .contact-list {
     grid-template-columns: 1fr 1fr; /* iki kolon */
   }
-  .contact-list li {
-    grid-template-columns: auto auto;
-  }
+  
 }
 @media (max-width: 480px) {
   .contact-section { padding-top: 1rem; }

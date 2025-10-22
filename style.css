@@ -213,46 +213,6 @@ footer {
     font-size: 1em;
   }
 }
-.contact-section {
-  background: rgba(13,34,54,0.98);
-  border-radius: 12px;
-  max-width: 600px;
-  margin: 48px auto;
-  padding: 32px 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.contact-form label {
-  color: #e2b76a;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #1a3550;
-  border-radius: 6px;
-  font-size: 1em;
-  background: #f5f5f5;
-  color: #0d2236;
-  font-family: 'Inter', Arial, sans-serif;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid #e2b76a;
-}
-.contact-details {
-  margin-top: 24px;
-  color: #f5f5f5;
-}
-.contact-details a {
-  color: #e2b76a;
-}
 
 /* ===== Contact Section Styles (Apex) ===== */
 .contact-section {
@@ -332,8 +292,8 @@ footer {
 .contact-ico{
   width:24px; height:24px;
   display:block; margin-top:2px;
-  /* img ile harici SVG kullanıyorsan renk dışarıdan değişmez.
-     Gold/beyaz dosyalarla tutarlılık sağla veya inline SVG'ye geç. */
+  color:#e2b76a;
+
 }
 
 .contact-body .contact-label{
